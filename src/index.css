@@ -1,3 +1,12 @@
+html, body{
+  height: 100%;
+}
+#root{
+  height: 100%;
+}
+main{
+  height: 80%;
+}
 body {
   margin: 0;
   padding: 0;
@@ -7,8 +16,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.btn span{
+  margin-left: 10px;
 }
+.icon{
+  float:left;
+  width: 6px;
+  height: 12px;
+}
+.critical{background-color: #e55242;}
+.high{background-color:#e88542;}
+.medium{background-color: #8bdef2;}
+.low{background-color: #f7f79f;}
