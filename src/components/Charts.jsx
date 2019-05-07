@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { getData } from "../actions/index";
 import BarChart from './BarChart';
 import styled, {ThemeProvider} from 'styled-components';
+import ChartDataFilter from '../utils/ChartDataFilter';
 
 const chartTheme = {
   color: '#666',
@@ -28,14 +29,18 @@ export class Charts extends Component {
     this.props.getData();
   }
   render() {
+    let viewMode = this.props.viewMode;
+    let formattedBeforeData = ChartDataFilter.getFilteredData(viewMode, this.props.beforeData);
+    let formattedAfterData = ChartDataFilter.getFilteredData(viewMode, this.props.afterData);
+
     return (
       <>
       { /* Check if data has loaded */
         this.props.isLoaded ? (
           <ThemeProvider theme={chartTheme}>
             <BarChartHolder>
-              <BarChart chartData={this.props.beforeData} />
-              <BarChart chartData={this.props.afterData} />
+              <BarChart chartData={formattedBeforeData} />
+              <BarChart chartData={formattedAfterData} />
             </BarChartHolder>
           </ThemeProvider>
       ) : (
@@ -49,7 +54,8 @@ function mapStateToProps(state) {
   return {
     beforeData: state.beforeData,
     afterData: state.afterData,
-    isLoaded: state.isLoaded
+    isLoaded: state.isLoaded,
+    viewMode: state.viewMode
   };
 }
 export default connect(

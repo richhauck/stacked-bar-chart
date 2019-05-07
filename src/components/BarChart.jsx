@@ -29,6 +29,7 @@ const BoxHolder = styled.div`
 
    & > div{
      cursor: pointer;
+     transition: height 0.5s ease-out;
    }
 `
 /** 
