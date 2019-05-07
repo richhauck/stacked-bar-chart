@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import ToolTip from './ToolTip';
+import BarChartFilter from './BarChartFilter';
 
 const Chart = styled.div`
     color: ${props => props.theme.color};
@@ -83,6 +84,7 @@ class BarChart extends Component{
 
     return(
       <>
+      <BarChartFilter/>
       <Chart>
         <h3>{label}</h3>
             <BoxHolder>
