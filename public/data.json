@@ -1,0 +1,20 @@
+{
+    "Before":{
+        "label": "Before",
+        "barValues": {
+            "Critical": 416,
+            "High": 492,
+            "Medium": 2568,
+            "Low": 2999
+        }
+    },
+    "After":{
+        "label": "After",
+        "barValues":{
+            "Critical": 900,
+            "High": 662,
+            "Medium": 849,
+            "Low": 1290
+        }
+    }
+}
