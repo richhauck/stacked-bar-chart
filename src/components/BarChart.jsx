@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import ToolTip from './ToolTip';
 
 const Chart = styled.div`
     color: ${props => props.theme.color};
@@ -103,6 +104,12 @@ class BarChart extends Component{
             </BoxHolder>
             <div>{sum}</div>
       </Chart>
+      <ToolTip 
+        message={this.state.message} 
+        isShowing={this.state.isToolTipShowing}
+        x={this.state.xPos}
+        y={this.state.yPos}
+        />
       </>
     )
   }
